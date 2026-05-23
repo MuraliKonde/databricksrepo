@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_dlt_pip:
+      name: DLT_Pip
+      libraries:
+        - glob:
+            include: ../../src/pipeline/my_transformation.py
+      schema: default
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: assestbundle
+      serverless: true
+      root_path: ../../src/pipeline

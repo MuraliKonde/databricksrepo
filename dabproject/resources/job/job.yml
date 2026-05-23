@@ -1,0 +1,14 @@
+resources:
+  jobs:
+    ingestion_pipeline:
+      name: ingestion_pipeline
+      tasks:
+        - task_key: ingestion_job
+          notebook_task:
+            notebook_path: ../../src/Nootbook/ingestion_notebook
+            base_parameters:
+              catalog: ${var.catalog}
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
